@@ -54,8 +54,7 @@ export default function BillDetailsPage({ type }) {
           </Button>
         </div>
       </div>
-      
-      
+
       <div className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
