@@ -2,6 +2,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { useAppSelector } from "../app/hooks";
 import { formatBDT } from "../utils/money";
+import { CiEdit } from "react-icons/ci";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { PiPrinterLight } from "react-icons/pi";
 
 export default function BillDetailsPage({ type }) {
   const { id } = useParams();
@@ -37,15 +40,17 @@ export default function BillDetailsPage({ type }) {
           <div className="text-xl font-semibold text-slate-900">{title}</div>
         </div>
         <div className="flex gap-2">
-          <Button variant="secondary" onClick={() => window.print()}>Print</Button>
+          <Button variant="secondary" onClick={() => window.print()}>
+            <PiPrinterLight size={20} />
+          </Button>
           <Button
             variant="secondary"
             onClick={() => navigate(isCorporate ? `/corporate/${bill.id}/edit` : `/event/${bill.id}/edit`)}
           >
-            Edit
+            <CiEdit size={20} />
           </Button>
           <Button variant="secondary" onClick={() => navigate(isCorporate ? "/corporate" : "/event")}>
-            Back
+            <IoIosArrowRoundBack size={20} />
           </Button>
         </div>
       </div>

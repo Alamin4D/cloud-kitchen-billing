@@ -6,6 +6,9 @@ import ConfirmModal from "../components/ConfirmModal";
 import Button from "../components/Button";
 import EmptyState from "../components/EmptyState";
 import { formatBDT } from "../utils/money";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 function CorporateBillCard({ bill, onView, onEdit, onDelete }) {
   return (
@@ -88,9 +91,9 @@ export default function CorporateListPage() {
                 <td className="px-4 py-3 font-medium">{formatBDT(b.grandTotal)}</td>
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap gap-2">
-                    <Button variant="secondary" onClick={() => navigate(`/corporate/${b.id}`)}>View</Button>
-                    <Button variant="secondary" onClick={() => navigate(`/corporate/${b.id}/edit`)}>Edit</Button>
-                    <Button variant="danger" onClick={() => setDeleteId(b.id)}>Delete</Button>
+                    <Button variant="secondary" onClick={() => navigate(`/corporate/${b.id}`)}><MdOutlineRemoveRedEye size={20} /></Button>
+                    <Button variant="secondary" onClick={() => navigate(`/corporate/${b.id}/edit`)}><CiEdit size={20} /></Button>
+                    <Button variant="danger" onClick={() => setDeleteId(b.id)}><RiDeleteBin6Line size={20} /></Button>
                   </div>
                 </td>
               </tr>
