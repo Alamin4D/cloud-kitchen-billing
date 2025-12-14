@@ -101,6 +101,7 @@ export default function CorporateListPage() {
           </tbody>
         </table>
       </div>
+      
 
       <ConfirmModal
         open={!!deleteId}
