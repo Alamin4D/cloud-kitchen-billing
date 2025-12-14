@@ -102,7 +102,6 @@ export default function CorporateListPage() {
         </table>
       </div>
       
-
       <ConfirmModal
         open={!!deleteId}
         title="Delete Corporate Bill"
