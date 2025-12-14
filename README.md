@@ -1,16 +1,87 @@
-# React + Vite
+# Cloud Kitchen Billing Dashboard (Frontend Only)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page admin dashboard for managing a **Cloud Kitchen Billing System** with two billing types:
 
-Currently, two official plugins are available:
+- **Corporate Billing** (recurring meals on multiple service dates)
+- **Event Billing** (one-off personal/corporate events with custom packages)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is **frontend-only** (no backend). Data is stored in **Redux Toolkit** and persisted in **localStorage**.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Live Demo
+- Live Link: `https://cloud-kitchen-billing.vercel.app/corporate`
+- GitHub Repo: `https://github.com/Alamin4D/cloud-kitchen-billing`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+### Dashboard (Common)
+- Sidebar navigation: **Corporate Billing** / **Event Billing**
+- Bills list view:
+  - Invoice/ID
+  - Name (Corporate Name / Event Name)
+  - Billing Type
+  - Date
+  - Total Amount
+  - Actions: View / Edit / Delete
+- Responsive UI:
+  - Mobile: card view + sidebar drawer
+  - Desktop: table view
+
+### Corporate Billing
+- Create/Edit/Delete corporate bills
+- Required fields:
+  - Corporate Name
+  - Contact Person
+  - Contact No
+  - Billing Date
+- Line items (multiple rows):
+  - Service Date
+  - Package Type (Economy/Standard/Premium)
+  - Persons
+  - Unit Price (BDT)
+  - Line Total (auto = persons × unit price)
+- Grand total auto calculation
+- Amount in words auto update
+
+### Event Billing
+- Create/Edit/Delete event bills
+- Required fields:
+  - Event Name
+  - Contact Person
+  - Contact No
+  - Event Date
+- Package items (multiple rows):
+  - Package Name
+  - Package Type
+  - Description (food items)
+  - Persons
+  - Unit Price (BDT)
+  - Line Total (auto)
+- Grand total auto calculation
+- Amount in words auto update
+
+### Validation
+- Basic required-field validation
+- Contact number validation (digits only, 10–14)
+- Save button disabled until the form is valid
+
+### Persistence
+- Redux state persisted to **localStorage**
+- Reloading the page keeps saved bills
+
+### Print View (Bonus)
+- Bill details page supports **Print** via browser print
+
+---
+
+## Tech Stack
+- React (Vite)
+- Redux Toolkit + React Redux
+- React Router DOM
+- Tailwind CSS
+- JavaScript (ES6+)
+
+---
