@@ -7,6 +7,7 @@ import EventFormPage from "./pages/EventFormPage";
 import BillDetailsPage from "./pages/BillDetailsPage";
 import NotFound from "./pages/NotFound";
 
+
 export default function App() {
   return (
     <Routes>
